@@ -1,3 +1,7 @@
+// Copyright (C) 2021 Toitware ApS. All rights reserved.
+// Use of this source code is governed by an MIT-style license that can be
+// found in the LICENSE file.
+
 import binary
 import serial
 
@@ -21,19 +25,19 @@ class SparkFunJoystick:
   off:
 
   /**
-  Returns the horizontal value in the range [-1..1].
+  The horizontal value in the range [-1..1].
   */
   horizontal -> float:
     return read_position_ REG_HORIZONTAL_POSITION_
 
   /**
-  Returns the vertical value in the range [-1..1].
+  The vertical value in the range [-1..1].
   */
   vertical -> float:
     return read_position_ REG_VERTICAL_POSITION_
 
   /**
-  Returns true if the button is pressed.
+  Whether the button is pressed.
   */
   pressed -> bool:
     return (registers_.read_u8 REG_BUTTON_POSITION_) == 0
