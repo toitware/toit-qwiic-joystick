@@ -9,6 +9,11 @@ export *
 /**
 Driver for the SparkFun Qwiic Joystick.
 
-Get the joystick at https://www.sparkfun.com/products/15168.
-Try the tutorial at https://docs.toit.io/hardware/drivers/write/sparkfun_joystick.
+The Sparkfun Qwiic Joystick is an analog joystick with a button.
+It communicates over I2C.
+
+See https://www.sparkfun.com/products/15168.
+
+This package was used in a tutorial:
+  https://docs.toit.io/hardware/drivers/write/sparkfun_joystick.
 */

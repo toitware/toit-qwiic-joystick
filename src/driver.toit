@@ -6,12 +6,16 @@ import binary
 import serial
 
 /**
+The default I2C address of the Sparkfun Joystick.
+*/
+I2C_ADDRESS ::= 0x20
+
+/**
 Driver for SparkFun Joystick.
 
 Get it at https://www.sparkfun.com/products/15168.
 */
 class SparkFunJoystick:
-  static I2C_ADDRESS ::= 0x20
 
   static REG_DEFAULT_ADDRESS_::= 0x00
   static REG_HORIZONTAL_POSITION_ ::= 0x03 // (to 0x04)

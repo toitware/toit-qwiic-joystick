@@ -2,6 +2,6 @@
 
 Driver for the Sparkfun Qwiic Joystick.
 
-The SparkFun Qwiic Joystick combines the convenience of the Qwiic connection
-system (no soldering required) and an analog joystick that reports its position
-over I2C. Get it at https://www.sparkfun.com/products/15168.
+The SparkFun Qwiic Joystick is a simple analog joystick with a button.
+
+https://www.sparkfun.com/products/15168.
