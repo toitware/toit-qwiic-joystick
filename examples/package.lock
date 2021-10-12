@@ -1,0 +1,5 @@
+prefixes:
+  sparkfun_joystick: ..
+packages:
+  ..:
+    path: ..
