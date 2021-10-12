@@ -1,4 +1,4 @@
-# sparkfun-qwiic-joystick
+# SparkFun Joystick
 
 Driver for the Sparkfun Qwiic Joystick.
 
