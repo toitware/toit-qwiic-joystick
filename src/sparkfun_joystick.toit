@@ -7,10 +7,8 @@ import .driver
 export *
 
 /**
-Driver for the sp....
+Driver for the SparkFun Qwiic Joystick.
 
-can be found here...
-a tutorial had been pub...
-...
-
+Get the joystick at https://www.sparkfun.com/products/15168.
+Try the tutorial at https://docs.toit.io/hardware/drivers/write/sparkfun_joystick.
 */

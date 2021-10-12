@@ -8,7 +8,7 @@ import serial
 /**
 Driver for SparkFun Joystick.
 
-link
+Get it at https://www.sparkfun.com/products/15168.
 */
 class SparkFunJoystick:
   static I2C_ADDRESS ::= 0x20
