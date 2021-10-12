@@ -1,7 +1,7 @@
 import gpio
 import serial.protocols.i2c as i2c
 
-import .driver
+import sparkfun_joystick show SparkFunJoystick
 
 main:
   bus := i2c.Bus

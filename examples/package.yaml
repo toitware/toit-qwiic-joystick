@@ -1,0 +1,3 @@
+dependencies:
+  sparkfun_joystick:
+    path: ..
