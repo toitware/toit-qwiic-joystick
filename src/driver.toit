@@ -5,6 +5,11 @@
 import binary
 import serial
 
+/**
+Driver for SparkFun Joystick.
+
+link
+*/
 class SparkFunJoystick:
   static I2C_ADDRESS ::= 0x20
 
