@@ -26,15 +26,15 @@ Get it at https://www.sparkfun.com/products/15168.
 */
 class Joystick:
 
-  static REG_DEFAULT_ADDRESS_::= 0x00
-  static REG_HORIZONTAL_POSITION_ ::= 0x03 // (to 0x04)
-  static REG_VERTICAL_POSITION_::= 0x05 // (to 0x06)
-  static REG_BUTTON_POSITION_ ::= 0x07
+  static REG-DEFAULT-ADDRESS_::= 0x00
+  static REG-HORIZONTAL-POSITION_ ::= 0x03 // (to 0x04)
+  static REG-VERTICAL-POSITION_::= 0x05 // (to 0x06)
+  static REG-BUTTON-POSITION_ ::= 0x07
 
   /**
   The default I2C address of the Sparkfun Joystick.
   */
-  static I2C_ADDRESS ::= 0x20
+  static I2C-ADDRESS ::= 0x20
 
 
   registers_/serial.Registers
@@ -42,30 +42,30 @@ class Joystick:
   constructor device/serial.Device:
     registers_ = device.registers
 
-    reg := registers_.read_u8 REG_DEFAULT_ADDRESS_
-    if reg != I2C_ADDRESS: throw "INVALID_CHIP"
+    reg := registers_.read-u8 REG-DEFAULT-ADDRESS_
+    if reg != I2C-ADDRESS: throw "INVALID_CHIP"
 
   /**
   The horizontal value in the range [-1..1].
   */
   horizontal -> float:
-    return read_position_ REG_HORIZONTAL_POSITION_
+    return read-position_ REG-HORIZONTAL-POSITION_
 
   /**
   The vertical value in the range [-1..1].
   */
   vertical -> float:
-    return read_position_ REG_VERTICAL_POSITION_
+    return read-position_ REG-VERTICAL-POSITION_
 
   /**
   Whether the button is pressed.
   */
   pressed -> bool:
-    return (registers_.read_u8 REG_BUTTON_POSITION_) == 0
+    return (registers_.read-u8 REG-BUTTON-POSITION_) == 0
 
-  read_position_ reg/int -> float:
-    value := registers_.read_u16_be reg
+  read-position_ reg/int -> float:
+    value := registers_.read-u16-be reg
     // Move from uint16 range to int16 range.
-    value -= int.MAX_16
+    value -= int.MAX-16
     // Perform floating-point division to get to [-1..1] range.
-    return value.to_float / int.MAX_16
+    return value.to-float / int.MAX-16
