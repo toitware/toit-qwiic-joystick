@@ -1,5 +1,5 @@
 prefixes:
-  sparkfun_joystick: ..
+  qwiic-joystick: ..
 packages:
   ..:
     path: ..

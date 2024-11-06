@@ -5,33 +5,45 @@
 import binary
 import serial
 
+
 /**
-The default I2C address of the Sparkfun Joystick.
+Driver for the SparkFun Qwiic Joystick.
+
+The Sparkfun Qwiic Joystick is an analog joystick with a button.
+It communicates over I2C.
+
+See https://www.sparkfun.com/products/15168.
+
+This package was used in a tutorial:
+  https://docs.toit.io/peripherals/drivers/sparkfun_joystick.
 */
-I2C_ADDRESS ::= 0x20
+
 
 /**
 Driver for SparkFun Joystick.
 
 Get it at https://www.sparkfun.com/products/15168.
 */
-class SparkFunJoystick:
+class Joystick:
 
   static REG_DEFAULT_ADDRESS_::= 0x00
   static REG_HORIZONTAL_POSITION_ ::= 0x03 // (to 0x04)
   static REG_VERTICAL_POSITION_::= 0x05 // (to 0x06)
   static REG_BUTTON_POSITION_ ::= 0x07
 
+  /**
+  The default I2C address of the Sparkfun Joystick.
+  */
+  static I2C_ADDRESS ::= 0x20
+
+
   registers_/serial.Registers
 
   constructor device/serial.Device:
     registers_ = device.registers
 
-  on:
     reg := registers_.read_u8 REG_DEFAULT_ADDRESS_
     if reg != I2C_ADDRESS: throw "INVALID_CHIP"
-
-  off:
 
   /**
   The horizontal value in the range [-1..1].
@@ -54,6 +66,6 @@ class SparkFunJoystick:
   read_position_ reg/int -> float:
     value := registers_.read_u16_be reg
     // Move from uint16 range to int16 range.
-    value -= binary.INT16_MAX
+    value -= int.MAX_16
     // Perform floating-point division to get to [-1..1] range.
-    return value.to_float / binary.INT16_MAX
+    return value.to_float / int.MAX_16

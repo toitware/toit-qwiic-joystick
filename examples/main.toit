@@ -3,20 +3,19 @@
 // be found in the EXAMPLES_LICENSE file.
 
 import gpio
-import serial.protocols.i2c as i2c
+import i2c
 
-import sparkfun_joystick
+import qwiic-joystick show *
 
 main:
   bus := i2c.Bus
-    --sda=gpio.Pin 21
-    --scl=gpio.Pin 22
+      --sda=gpio.Pin 21
+      --scl=gpio.Pin 22
 
-  device := bus.device sparkfun_joystick.I2C_ADDRESS
+  device := bus.device Joystick.I2C_ADDRESS
 
-  joystick := sparkfun_joystick.SparkFunJoystick device
+  joystick := Joystick device
 
-  joystick.on
   while true:
     print "$joystick.horizontal - $joystick.vertical "
         + "(pressed: $joystick.pressed)"
