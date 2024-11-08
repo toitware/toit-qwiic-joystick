@@ -1,1 +1,2 @@
-# Toit Package File.
+name: qwiic-joystick
+description: Driver for the Sparkfun Qwiic Joystick.
