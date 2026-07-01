@@ -1,2 +1,4 @@
 name: qwiic-joystick
 description: Driver for the Sparkfun Qwiic Joystick.
+environment:
+  sdk: ^2.0.0-alpha.194.1
