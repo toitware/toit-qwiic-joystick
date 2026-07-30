@@ -2,15 +2,14 @@
 // Use of this source code is governed by a Zero-Clause BSD license that can
 // be found in the EXAMPLES_LICENSE file.
 
-import gpio
 import i2c
 
 import qwiic-joystick show *
 
 main:
   bus := i2c.Bus
-      --sda=gpio.Pin 21
-      --scl=gpio.Pin 22
+      --sda=21
+      --scl=22
 
   device := bus.device Joystick.I2C_ADDRESS
 
